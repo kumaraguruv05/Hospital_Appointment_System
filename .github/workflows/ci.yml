@@ -1,6 +1,8 @@
 name: Hospital Appointment CI
 
 on:
+  push:
+    branches: [ main, feature-update ]
   pull_request:
     branches: [ main ]
 
@@ -9,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Python
